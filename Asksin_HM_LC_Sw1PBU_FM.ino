@@ -1,5 +1,6 @@
 //- load library's --------------------------------------------------------------------------------------------------------
 #include "AskSin.h"
+#include "arduino-include.h"
 
 //- serial communication --------------------------------------------------------------------------------------------------
 const char helptext1[] PROGMEM = {												// help text for serial console
