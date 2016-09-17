@@ -1,0 +1,10 @@
+#if defined(DEVICE)
+#if (DEVICE == 1)
+#define HM_SERIAL 'N','E','Q','0','0','0','0','0','0','1'
+#define HM_ID     0x46, 0x00, 0x01
+#elif (DEVICE == 2)
+#define HM_SERIAL 'N','E','Q','0','0','0','0','0','0','2'
+#define HM_ID     0x46, 0x00, 0x02
+#endif
+#endif
+

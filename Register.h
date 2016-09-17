@@ -1,3 +1,5 @@
+#include "devices.h"
+
 //- Software config --------------------------------------------------------------------------------------------------------
 //#define USE_SERIAL
 
@@ -13,13 +15,12 @@
 const uint8_t devParam[] PROGMEM = {
 	/* Firmware version 1 byte */  0x15,									// don't know for what it is good for
 	/* Model ID	        2 byte */  0xF0, 0xA9,	//0x00, 0x6C							// model ID, describes HM hardware. we should use high values due to HM starts from 0
-	/* Serial ID       10 byte */  'P','S','0','0','0','0','0','0','0','2', // serial ID, needed for pairing
+	/* Serial ID       10 byte */  HM_SERIAL, // serial ID, needed for pairing
 	/* Sub Type ID      1 byte */  0x10,									// not needed for FHEM, it's something like a group ID
 	/* Device Info      3 byte */  0x41, 0x01, 0x00							// describes device, not completely clear yet. includes amount of channels
 };
 
-//const uint8_t  HMID[3]     = { 0x20, 0x7C, 0x41 };	// 207C41						// very important, must be unique. identifier for the device in the network
-const uint8_t  HMID[3]     = { 0x20, 0x85, 0x57 };     // 208557
+const uint8_t  HMID[3]     =  { HM_ID };
 const uint8_t  maxRetries  = 3;											// how often a string should be send out until we get an answer
 const uint16_t timeOut     = 700;											// time out for ACK handling
 
